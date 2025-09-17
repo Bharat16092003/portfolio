@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Singh | DevOps Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <h1>Bharat Singh</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <div class="intro">
+            <img src="assets/profile.jpg" alt="Bharat Singh">
+            <p>Motivated BCA graduate and aspiring DevOps Engineer with hands-on experience in Cloud, Containerization, and Automation. Strong foundation in Docker, Kubernetes, AWS, Git, Jenkins, Ansible, and Terraform. Passionate about learning, problem-solving, and deploying real-time projects.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in">
+        <h2>Skills & Tools</h2>
+        <div class="skills-list">
+            <span>Linux</span>
+            <span>AWS (EC2, S3, IAM, VPC, Lambda)</span>
+            <span>Git</span>
+            <span>Ansible</span>
+            <span>Docker</span>
+            <span>Kubernetes</span>
+            <span>Jenkins CI/CD</span>
+            <span>Terraform</span>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Realtime Full Stack Chat Application</h3>
+            <p>Deployed locally using Docker and Kubernetes (Minikube) in 3 days. Configured Nginx as a reverse proxy and managed containerized services to ensure smooth communication and scalability.</p>
+            <p><strong>Tools/Technologies:</strong> Docker, Kubernetes (Minikube), Nginx, Git, YAML, Linux</p>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="fade-in">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Certificate of Participation – Inter-College Mathematics Olympiad, Institute of Technology and Science College, 2022</li>
+            <li>Certificate of Participation in Workshop – Capacity Building and Technical Skill Development for Universal Acceptance in India, Institute of Technology and Science, 2022</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <ul>
+            <li>Phone: +91 9518870139</li>
+            <li>Email: <a href="mailto:singh0077deepu@gmail.com">singh0077deepu@gmail.com</a></li>
+            <li>GitHub: <a href="https://github.com/Bharat16092003" target="_blank">Bharat16092003</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/bharat-singh-2a33b6257" target="_blank">Bharat Singh</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Bharat Singh | Designed by Bharat Singh</p>
+    </footer>
+
+    <!-- Smooth Scroll -->
+    <script>
+        const links = document.querySelectorAll('nav ul li a');
+        for (const link of links) {
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+</body>
+</html>
